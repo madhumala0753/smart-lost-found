@@ -1,428 +1,299 @@
 /* =========================================================
-   SMART LOST & FOUND — CAMPUS PREMIUM HERO DESIGN
-   Add this at the VERY END of style.css
+   FINAL CAMPUS HERO OVERRIDE
    ========================================================= */
 
-:root {
-  --navy: #092d72;
-  --blue: #1769ff;
-  --purple: #7046f5;
-  --cyan: #16b9e9;
-  --pink: #f45ca9;
-  --green: #21b982;
-  --soft-blue: #eef6ff;
-  --text: #102b61;
-}
-
-/* ---------- PAGE BACKGROUND ---------- */
-
-body {
-  background:
-    radial-gradient(circle at 10% 20%, rgba(53, 131, 255, .08), transparent 25%),
-    radial-gradient(circle at 90% 30%, rgba(122, 77, 255, .08), transparent 25%),
-    #ffffff;
-  color: var(--text);
-}
-
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
-.navbar {
-  height: 82px;
-  padding: 0 5%;
-  background: rgba(255,255,255,.96);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(20,70,150,.08);
-  box-shadow: 0 5px 25px rgba(20,60,130,.06);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.brand {
-  color: var(--navy);
-  font-weight: 800;
-}
-
-.brand-icon {
-  background:
-    linear-gradient(135deg, #16b9e9, #7046f5);
-  box-shadow:
-    0 8px 25px rgba(73,91,255,.3);
-}
-
-
-/* =========================================================
-   HERO — BIG CAMPUS BACKGROUND
-   ========================================================= */
-
+/* HERO WITH REAL CAMPUS BACKGROUND */
 .hero {
-  min-height: 520px;
-  position: relative;
-  overflow: hidden;
+  position: relative !important;
+  overflow: hidden !important;
 
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  align-items: center;
+  min-height: 560px !important;
+  padding: 70px 5% 60px !important;
 
-  padding: 65px 5% 55px;
+  display: grid !important;
+  grid-template-columns: 1fr 0.85fr !important;
+  align-items: center !important;
 
-  /* REAL CAMPUS BUILDING IMAGE */
-  background:
+  background-image:
     linear-gradient(
       90deg,
-      rgba(247,251,255,.98) 0%,
-      rgba(247,251,255,.94) 38%,
-      rgba(247,251,255,.45) 65%,
-      rgba(247,251,255,.12) 100%
+      rgba(246,250,255,0.98) 0%,
+      rgba(246,250,255,0.90) 38%,
+      rgba(246,250,255,0.48) 63%,
+      rgba(246,250,255,0.10) 100%
     ),
-    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=90");
+    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=90") !important;
 
-  background-size: cover;
-  background-position: center;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
-/* soft blue glow */
+/* BLUE LIGHT EFFECT */
 .hero::before {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  left: -220px;
-  top: -250px;
-
-  background: rgba(80,150,255,.13);
-  filter: blur(80px);
-  border-radius: 50%;
-}
-
-/* greenery decoration */
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -70px;
-  bottom: -100px;
-  width: 400px;
-  height: 400px;
-
-  background:
-    radial-gradient(circle, rgba(40,190,130,.22), transparent 65%);
-
-  filter: blur(15px);
-}
-
-
-/* =========================================================
-   HERO TEXT
-   ========================================================= */
-
-.hero-copy {
-  position: relative;
-  z-index: 5;
-  max-width: 650px;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 8px 15px;
-
-  border-radius: 30px;
-
-  background: rgba(231,242,255,.92);
-  border: 1px solid rgba(36,108,255,.15);
-
-  color: #1769ff;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-
-  box-shadow: 0 8px 25px rgba(37,105,230,.08);
-}
-
-.hero h1 {
-  margin: 20px 0 15px;
-
-  font-size: clamp(46px, 5vw, 72px);
-  line-height: .98;
-  letter-spacing: -3px;
-
-  color: #092d72;
-  font-weight: 900;
-}
-
-.hero h1 span {
-  display: block;
-
-  background:
-    linear-gradient(
-      90deg,
-      #1476ff,
-      #7046f5,
-      #b044ee
-    );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero p {
-  max-width: 590px;
-
-  color: #4d6690;
-  font-size: 17px;
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   HERO BUTTONS
-   ========================================================= */
-
-.hero-actions {
-  display: flex;
-  gap: 15px;
-  margin-top: 28px;
-}
-
-.btn {
-  border-radius: 16px;
-  padding: 14px 24px;
-  font-weight: 800;
-
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.btn.primary {
-  background:
-    linear-gradient(135deg, #1769ff, #7544f5);
-
-  color: white;
-
-  border: none;
-
-  box-shadow:
-    0 12px 30px rgba(62,88,245,.28);
-}
-
-.btn.secondary {
-  background: rgba(255,255,255,.88);
-
-  color: #1769ff;
-
-  border: 2px solid #1769ff;
-
-  box-shadow: 0 8px 25px rgba(20,80,180,.08);
-}
-
-
-/* =========================================================
-   SMART MATCH CARD
-   ========================================================= */
-
-.hero-card {
-  position: relative;
-  z-index: 10;
-
-  width: min(430px, 100%);
-  min-height: 350px;
-
-  margin-left: auto;
-
-  padding: 30px;
-
-  border-radius: 28px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.94),
-      rgba(246,249,255,.82)
-    );
-
-  border: 1px solid rgba(255,255,255,.8);
-
-  box-shadow:
-    0 30px 70px rgba(20,55,130,.22),
-    inset 0 1px 0 rgba(255,255,255,.9);
-
-  backdrop-filter: blur(20px);
-
-  overflow: hidden;
-}
-
-/* glowing circle behind card */
-
-.hero-card::before {
-  content: "";
-
-  position: absolute;
-
-  width: 230px;
-  height: 230px;
-
-  right: -70px;
-  bottom: -70px;
-
-  border-radius: 50%;
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
 
   background:
     radial-gradient(
-      circle,
-      rgba(91,100,255,.22),
-      transparent 70%
-    );
+      circle at 15% 40%,
+      rgba(55,130,255,.20),
+      transparent 35%
+    ) !important;
+
+  pointer-events: none !important;
+}
+
+/* HERO CONTENT */
+.hero-copy {
+  position: relative !important;
+  z-index: 10 !important;
+  max-width: 650px !important;
+}
+
+/* SMALL BADGE */
+.eyebrow {
+  display: inline-block !important;
+
+  padding: 8px 16px !important;
+
+  border-radius: 30px !important;
+
+  background: rgba(225,240,255,.95) !important;
+
+  color: #1769ff !important;
+
+  font-size: 12px !important;
+  font-weight: 800 !important;
+
+  letter-spacing: 1px !important;
+
+  box-shadow: 0 8px 25px rgba(30,90,180,.12) !important;
+}
+
+/* BIG HEADING */
+.hero h1 {
+  position: relative !important;
+  z-index: 10 !important;
+
+  margin: 22px 0 18px !important;
+
+  font-size: clamp(45px, 5vw, 70px) !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: -3px !important;
+
+  font-weight: 900 !important;
+
+  color: #092d72 !important;
+}
+
+.hero h1 span {
+  background: linear-gradient(
+    90deg,
+    #087cff,
+    #6045f5,
+    #a23fe9
+  ) !important;
+
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+
+  color: transparent !important;
+}
+
+/* DESCRIPTION */
+.hero-copy > p {
+  max-width: 570px !important;
+
+  color: #50698f !important;
+
+  font-size: 17px !important;
+
+  line-height: 1.7 !important;
 }
 
 
 /* =========================================================
-   BACKPACK + BOOKS
+   BUTTONS
+   ========================================================= */
+
+.hero-actions {
+  display: flex !important;
+  gap: 16px !important;
+  margin-top: 28px !important;
+}
+
+.hero-actions .btn.primary {
+  background: linear-gradient(
+    135deg,
+    #087cff,
+    #7145f5
+  ) !important;
+
+  color: white !important;
+
+  border: none !important;
+
+  border-radius: 16px !important;
+
+  padding: 15px 25px !important;
+
+  box-shadow:
+    0 14px 35px rgba(60,90,240,.28) !important;
+}
+
+.hero-actions .btn.secondary {
+  background: rgba(255,255,255,.92) !important;
+
+  color: #1769ff !important;
+
+  border: 2px solid #1769ff !important;
+
+  border-radius: 16px !important;
+
+  padding: 13px 25px !important;
+}
+
+
+/* =========================================================
+   RIGHT SIDE SMART MATCH
+   ========================================================= */
+
+.hero-card {
+  position: relative !important;
+  z-index: 20 !important;
+
+  width: 420px !important;
+  min-height: 350px !important;
+
+  margin-left: auto !important;
+
+  padding: 30px !important;
+
+  border-radius: 28px !important;
+
+  background: rgba(255,255,255,.90) !important;
+
+  border: 1px solid rgba(255,255,255,.9) !important;
+
+  box-shadow:
+    0 30px 70px rgba(20,60,130,.25) !important;
+
+  backdrop-filter: blur(20px) !important;
+}
+
+
+/* =========================================================
+   BACKPACK IMAGE
    ========================================================= */
 
 .hero-card .illustration {
-  position: absolute;
+  position: absolute !important;
 
-  right: -40px;
-  bottom: -5px;
+  right: -30px !important;
+  bottom: -10px !important;
 
-  width: 300px;
-  height: 260px;
+  width: 310px !important;
+  height: 270px !important;
 
-  border-radius: 25px;
+  border-radius: 25px !important;
 
-  /* BACKPACK IMAGE */
   background-image:
     linear-gradient(
-      135deg,
-      rgba(255,255,255,.05),
-      rgba(255,255,255,.25)
+      rgba(255,255,255,.02),
+      rgba(255,255,255,.08)
     ),
-    url("https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=90");
+    url("https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=90") !important;
 
-  background-size: cover;
-  background-position: center;
+  background-size: cover !important;
 
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.18);
+  background-position: center !important;
 
-  transform: rotate(-2deg);
-
-  opacity: .95;
-}
-
-/* small floating glass effect */
-
-.floating-card {
-  position: relative;
-  z-index: 20;
-
-  background: rgba(255,255,255,.94);
-
-  border-radius: 18px;
-
-  padding: 18px;
-
-  width: 240px;
+  background-repeat: no-repeat !important;
 
   box-shadow:
-    0 18px 40px rgba(30,60,120,.18);
+    0 25px 50px rgba(20,40,80,.22) !important;
 
-  backdrop-filter: blur(15px);
+  border-radius: 25px !important;
 
-  border: 1px solid rgba(255,255,255,.8);
+  overflow: hidden !important;
+
+  z-index: 1 !important;
 }
 
-.floating-card strong {
-  color: #092d72;
-  font-size: 16px;
-}
 
-.mini-icon {
-  width: 44px;
-  height: 44px;
+/* SMART MATCH FLOATING CARD */
+.hero-card .floating-card {
+  position: relative !important;
 
-  display: grid;
-  place-items: center;
+  z-index: 10 !important;
 
-  border-radius: 14px;
+  width: 245px !important;
 
-  background:
-    linear-gradient(135deg,#e9f4ff,#e8ddff);
+  padding: 18px !important;
 
-  color: #1769ff;
+  border-radius: 18px !important;
+
+  background: rgba(255,255,255,.95) !important;
 
   box-shadow:
-    0 8px 20px rgba(65,95,220,.15);
+    0 18px 40px rgba(30,60,120,.20) !important;
+
+  border: 1px solid rgba(255,255,255,.9) !important;
+}
+
+.hero-card .floating-card b {
+  color: #092d72 !important;
+
+  font-size: 16px !important;
+}
+
+.hero-card .floating-card small {
+  color: #6c7d9d !important;
+}
+
+.hero-card .floating-card strong {
+  color: #1769ff !important;
 }
 
 
 /* =========================================================
-   SEARCH BAR
+   SEARCH
    ========================================================= */
 
 .search-wrap {
-  position: relative;
-  z-index: 30;
+  position: relative !important;
+  z-index: 50 !important;
 
-  width: 90%;
-  max-width: 1200px;
+  width: 90% !important;
+  max-width: 1250px !important;
 
-  margin: -28px auto 35px;
+  margin: -30px auto 40px !important;
 
-  padding: 14px;
+  padding: 14px !important;
 
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  background: rgba(255,255,255,.95) !important;
 
-  background: rgba(255,255,255,.94);
+  border-radius: 22px !important;
 
-  border: 1px solid rgba(45,105,220,.14);
-
-  border-radius: 22px;
+  border: 1px solid #dce7f8 !important;
 
   box-shadow:
-    0 20px 50px rgba(20,70,150,.13);
-
-  backdrop-filter: blur(20px);
+    0 20px 55px rgba(20,70,150,.14) !important;
 }
 
 .search-wrap input {
-  flex: 1;
+  background: #f6f9ff !important;
 
-  height: 52px;
+  border: none !important;
 
-  border: none;
-  outline: none;
+  border-radius: 15px !important;
 
-  padding: 0 20px;
+  padding: 16px !important;
 
-  border-radius: 15px;
-
-  background: #f5f8ff;
-
-  color: #16376e;
-
-  font-size: 15px;
-}
-
-.search-wrap input:focus {
-  background: #edf4ff;
-
-  box-shadow:
-    inset 0 0 0 2px rgba(36,105,255,.15);
+  color: #16386f !important;
 }
 
 
@@ -430,341 +301,83 @@ body {
    FEATURE CARDS
    ========================================================= */
 
-.section {
-  position: relative;
-}
+.cards .card {
+  border-radius: 24px !important;
 
-.cards {
-  display: grid;
-  grid-template-columns:
-    repeat(auto-fit, minmax(250px, 1fr));
+  border: 1px solid #e1e9f6 !important;
 
-  gap: 22px;
-}
-
-.card {
-  position: relative;
-
-  border-radius: 24px;
-
-  padding: 26px;
-
-  background: white;
-
-  border: 1px solid rgba(40,100,210,.1);
+  background: white !important;
 
   box-shadow:
-    0 15px 40px rgba(30,70,140,.08);
+    0 15px 40px rgba(30,70,140,.09) !important;
 
-  overflow: hidden;
-
-  transition:
-    transform .3s ease,
-    box-shadow .3s ease;
+  transition: .3s ease !important;
 }
 
-.card:hover {
-  transform: translateY(-8px);
+.cards .card:hover {
+  transform: translateY(-7px) !important;
 
   box-shadow:
-    0 25px 55px rgba(30,75,160,.15);
-}
-
-.card::after {
-  content: "";
-
-  position: absolute;
-
-  width: 130px;
-  height: 130px;
-
-  right: -50px;
-  bottom: -50px;
-
-  border-radius: 50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(44,119,255,.12),
-      rgba(124,65,245,.12)
-    );
+    0 25px 55px rgba(30,70,140,.16) !important;
 }
 
 
 /* =========================================================
-   STATS — PREMIUM GLASS STYLE
+   STATS
    ========================================================= */
 
 .stats {
-  width: 90%;
-  max-width: 1300px;
+  width: 90% !important;
+  max-width: 1300px !important;
 
-  margin: 20px auto 60px;
+  margin: 20px auto 60px !important;
 
-  display: grid;
+  padding: 18px !important;
 
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 16px;
-
-  padding: 18px;
-
-  border-radius: 28px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f1f7ff,
-      #faf7ff
-    );
-
-  border: 1px solid #dbe7fb;
-
-  box-shadow:
-    0 15px 45px rgba(30,70,140,.08);
-}
-
-.stat {
-  background: rgba(255,255,255,.85);
-
-  border-radius: 20px;
-
-  padding: 22px;
-
-  text-align: center;
-
-  border: 1px solid rgba(50,100,200,.08);
-}
-
-.stat strong {
-  display: block;
-
-  font-size: 34px;
-
-  font-weight: 900;
-
-  color: #123c88;
-}
-
-.stat span {
-  color: #6b7d9f;
-
-  font-size: 13px;
-
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   SECTION HEADINGS
-   ========================================================= */
-
-.section-head h2,
-.center h2 {
-  color: #092d72;
-
-  font-size: 38px;
-
-  font-weight: 900;
-
-  letter-spacing: -1.5px;
-}
-
-.section-head p,
-.center p {
-  color: #63789d;
-}
-
-
-/* =========================================================
-   FORMS
-   ========================================================= */
-
-.form-section {
-  background:
-    linear-gradient(
-      135deg,
-      #f4f8ff,
-      #fbf8ff
-    );
-
-  border-radius: 35px;
-
-  margin: 50px 5%;
-
-  padding: 50px;
-
-  box-shadow:
-    0 20px 60px rgba(40,75,140,.08);
-}
-
-form {
-  background: white;
-
-  padding: 30px;
-
-  border-radius: 25px;
-
-  border: 1px solid #e1eafa;
-
-  box-shadow:
-    0 15px 40px rgba(40,70,130,.08);
-}
-
-input,
-select,
-textarea {
-  border: 1px solid #dce6f5;
-
-  border-radius: 14px;
-
-  background: #f8fbff;
-
-  padding: 14px 16px;
-
-  color: #17396f;
-
-  outline: none;
-
-  transition: .2s;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: #4c7dff;
-
-  background: white;
-
-  box-shadow:
-    0 0 0 4px rgba(55,105,255,.09);
-}
-
-
-/* =========================================================
-   HOW IT WORKS
-   ========================================================= */
-
-.steps {
-  display: grid;
+  display: grid !important;
 
   grid-template-columns:
-    repeat(3, 1fr);
+    repeat(4,1fr) !important;
 
-  gap: 25px;
-}
+  gap: 15px !important;
 
-.step {
-  background: white;
+  border-radius: 28px !important;
 
-  border-radius: 24px;
-
-  padding: 28px;
-
-  border: 1px solid #e0e8f6;
-
-  box-shadow:
-    0 15px 40px rgba(30,70,140,.08);
-
-  transition: .3s;
-}
-
-.step:hover {
-  transform: translateY(-7px);
-
-  box-shadow:
-    0 25px 55px rgba(40,80,160,.14);
-}
-
-
-/* =========================================================
-   DASHBOARD
-   ========================================================= */
-
-.dashboard {
   background:
     linear-gradient(
       135deg,
       #f0f7ff,
-      #faf6ff
-    );
-
-  border-radius: 35px;
-}
-
-.dash-grid {
-  gap: 22px;
-}
-
-.dash-grid > * {
-  background: rgba(255,255,255,.9);
-
-  border: 1px solid #e0e8f6;
-
-  border-radius: 24px;
-
-  box-shadow:
-    0 15px 40px rgba(30,70,140,.08);
-}
-
-
-/* =========================================================
-   LOGIN
-   ========================================================= */
-
-.login-section {
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(35,120,255,.15),
-      transparent 35%
-    ),
-    linear-gradient(
-      135deg,
-      #f2f7ff,
       #faf5ff
-    );
-}
+    ) !important;
 
-.login-box {
-  background: rgba(255,255,255,.94);
-
-  border-radius: 30px;
-
-  padding: 40px;
+  border: 1px solid #dce7f7 !important;
 
   box-shadow:
-    0 25px 70px rgba(30,70,140,.14);
-
-  border: 1px solid rgba(255,255,255,.9);
-
-  backdrop-filter: blur(18px);
+    0 18px 50px rgba(30,70,140,.08) !important;
 }
 
+.stats > div {
+  padding: 22px !important;
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+  border-radius: 20px !important;
 
-footer {
-  background:
-    linear-gradient(
-      135deg,
-      #071f50,
-      #122f68
-    );
+  background: rgba(255,255,255,.9) !important;
 
-  color: white;
-
-  padding: 50px 5%;
-
-  margin-top: 70px;
+  text-align: center !important;
 }
 
-footer .brand {
-  color: white;
+.stats b {
+  display: block !important;
+
+  font-size: 32px !important;
+
+  color: #123c88 !important;
+}
+
+.stats span {
+  color: #687b9c !important;
+
+  font-weight: 600 !important;
 }
 
 
@@ -772,74 +385,49 @@ footer .brand {
    RESPONSIVE
    ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
 
-    padding-top: 50px;
+    min-height: 750px !important;
   }
 
   .hero-card {
-    margin: 35px auto 0;
+    margin: 30px auto 0 !important;
   }
 
   .stats {
     grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-  .steps {
-    grid-template-columns: 1fr;
+      repeat(2,1fr) !important;
   }
 }
 
-
-@media (max-width: 650px) {
-
-  .navbar {
-    height: 70px;
-  }
+@media (max-width: 600px) {
 
   .hero {
-    min-height: 700px;
+    padding: 45px 20px !important;
 
-    padding: 45px 20px;
-
-    background-position: 65% center;
+    background-position: 65% center !important;
   }
 
   .hero h1 {
-    font-size: 43px;
-
-    letter-spacing: -2px;
+    font-size: 43px !important;
   }
 
   .hero-actions {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   .hero-card {
-    min-height: 300px;
+    width: 100% !important;
   }
 
-  .search-wrap {
-    width: 92%;
-
-    flex-direction: column;
-  }
-
-  .search-wrap input {
-    width: 100%;
+  .hero-card .illustration {
+    width: 250px !important;
   }
 
   .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .form-section {
-    margin: 30px 15px;
-
-    padding: 25px;
+    grid-template-columns: 1fr !important;
   }
 }
